@@ -1,7 +1,7 @@
+import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod"
 import z from "zod"
-import { FastifyPluginAsyncZod } from "fastify-type-provider-zod"
 
-export const subscribeToEventRoute: FastifyPluginAsyncZod = async (app) => {
+export const subscribeToEventRoute: FastifyPluginAsyncZod = async app => {
   app.post(
     "/subscriptions",
     {
