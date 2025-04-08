@@ -2,6 +2,10 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Diego Fernandes",
-  "email": "diego@rocketseat.com.br"
+  "name": "Mayk Brito",
+  "email": "maykbrito@rocketseat.com.br"
 }
+
+###
+
+GET http://localhost:3333/invites/diego123
