@@ -13,17 +13,25 @@ export const getRankingRoute: FastifyPluginAsyncZod = async app => {
         summary: "Get ranking",
         tags: ["referral"],
 
-        // response: {
-        //   200: z.object({
-        //     count: z.number(),
-        //   }),
-        // },
+        response: {
+          200: z.object({
+            ranking: z.array(
+              z.object({
+                id: z.string(),
+                name: z.string(),
+                score: z.number(),
+              })
+            ),
+          }),
+        },
       },
     },
     async request => {
-      await getRanking()
+      const { rankingWithScore } = await getRanking()
 
-      return "ok"
+      return {
+        ranking: rankingWithScore,
+      }
     }
   )
 }
