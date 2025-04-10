@@ -12,7 +12,7 @@ interface SubscribeToEventParams {
 export async function subscribeToEvent({
   name,
   email,
-  referrerId
+  referrerId,
 }: SubscribeToEventParams) {
   const subscribers = await db
     .select()
@@ -33,9 +33,9 @@ export async function subscribeToEvent({
     })
     .returning()
 
-    if(referrerId) {
-      await redis.zincrby("referral:ranking", 1, referrerId)
-    }
+  if (referrerId) {
+    await redis.zincrby("referral:ranking", 1, referrerId)
+  }
 
   const subscriber = result[0]
 

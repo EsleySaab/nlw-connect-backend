@@ -2,14 +2,27 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Mayk Brito",
-  "email": "maykbrito@rocketseat.com.br"
+  "name": "Usuário Indicado 3",
+  "email": "indicado3@gmail.com",
+  "referrer": "836b7446-c8ce-48b8-a31c-dbe3f393a0ad"
 }
 
 ###
 
-GET http://localhost:3333/invites/diego123
+GET http://localhost:3333/invites/6218d4a6-e062-4221-90fa-1ef136db2766
 
 ###
 
-GET http://localhost:3333/subscribers/diego123/ranking/clicks
+GET http://localhost:3333/subscribers/6218d4a6-e062-4221-90fa-1ef136db2766/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/6218d4a6-e062-4221-90fa-1ef136db2766/ranking/count
+
+###
+
+GET http://localhost:3333/subscribers/6218d4a6-e062-4221-90fa-1ef136db2766/ranking/position
+
+###
+
+GET http://localhost:3333/ranking
